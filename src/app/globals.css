@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #0f172a;
+  --gold: #c5a059;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--primary);
+  background: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.hero-gradient {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
