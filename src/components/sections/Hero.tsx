@@ -1,6 +1,7 @@
 "use client"
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   const containerVars: Variants = {
@@ -15,15 +16,19 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-white">
-      <Image
-        src="/images/hero-banner.png"
-        alt="Hero Banner"
-        fill
-        quality={100}
-        className="absolute z-0 w-full h-full object-cover scale-105 transition-transform duration-700 hover:scale-110"
-      >
-      </Image>
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/20 via-transparent to-white" />
+      <div className="absolute inset-0 z-0 h-full w-full">
+        <Image
+          src="/images/hero-banner.png"
+          alt="Hero Banner"
+          fill
+          priority
+          quality={100}
+          className="object-cover scale-105 transition-transform duration-1000 hover:scale-110 opacity-40 grayscale-[20%]"
+        />
+      </div>
+
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/30 via-transparent to-white" />
+
       <motion.div
         variants={containerVars}
         initial="initial"
@@ -31,22 +36,22 @@ export default function Hero() {
         className="relative z-20 text-center px-6 max-w-6xl pt-20"
       >
         <motion.div variants={itemVars}>
-          <span className="text-amber-600 font-black tracking-[6px] text-[11px] uppercase mb-6 block">
+          <span className="text-[#3b5998] font-black tracking-[6px] text-[11px] uppercase mb-6 block">
             TRUSTED SINCE 1998 • PREMIUM SERVICES
           </span>
         </motion.div>
 
         <motion.h1
           variants={itemVars}
-          className="text-6xl md:text-[130px] font-black text-slate-900 leading-[0.8] tracking-tighter mb-8"
+          className="text-6xl md:text-[120px] font-black leading-[0.8] tracking-tighter mb-8"
         >
-          BIG WAY <br />
-          <span className="text-amber-600">UMRAH.</span>
+          <span className="text-[#3b5998]">BIG WAY</span> <br />
+          <span className="text-[#c1272d]">UMRAH.</span> 
         </motion.h1>
 
         <motion.p
           variants={itemVars}
-          className="text-black-500 text-lg md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed mb-12"
+          className="text-gray-600 text-lg md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed mb-12"
         >
           Experience a journey that transcends boundaries. Premium Umrah 2026
           packages tailored for your ultimate spiritual peace.
@@ -56,15 +61,22 @@ export default function Hero() {
           variants={itemVars}
           className="flex flex-col md:flex-row gap-6 justify-center items-center"
         >
-          <button className="bg-amber-600 text-white px-12 py-5 rounded-full font-black tracking-widest hover:bg-slate-900 transition-all duration-300 shadow-xl shadow-amber-600/20">
-            VIEW PACKAGES
-          </button>
-          <button className="bg-slate-100 text-slate-900 px-12 py-5 rounded-full font-black tracking-widest border border-slate-200 hover:bg-white transition-all">
-            B2B PORTAL
-          </button>
+          <Link 
+            href="/packages" 
+            className="inline-block text-center bg-[#c1272d] text-white px-12 py-5 rounded-full font-black tracking-widest hover:bg-[#3b5998] transition-all duration-300 shadow-xl shadow-red-600/20 uppercase text-xs"
+          >
+            View Packages
+          </Link>
+          
+          <Link 
+            href="/b2b" 
+            className="inline-block text-center bg-white text-[#3b5998] px-12 py-5 rounded-full font-black tracking-widest border-2 border-[#3b5998] hover:bg-[#3b5998] hover:text-white transition-all duration-300 uppercase text-xs"
+          >
+            B2B Umrah
+          </Link>
         </motion.div>
       </motion.div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-600 to-transparent opacity-20" />
+      <div className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-[#c1272d] to-[#3b5998] opacity-30" />
     </section>
   );
 }

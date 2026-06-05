@@ -13,53 +13,108 @@ const arkan = [
 ];
 
 export default function HajjPage() {
+  const blueColor = "#3b5998";
+  const redColor = "#c1272d";
+
   return (
-    <main className="bg-white">
+    <main className="bg-white min-h-screen">
       <Navbar />
-      
-      {/* Intro Header */}
-      <section className="pt-48 pb-20 px-10 text-center bg-slate-950 text-white">
-        <motion.h1 initial={{ scale: 0.8 }} animate={{ scale: 1 }} className="text-8xl font-black tracking-tighter uppercase italic">ARKAN-E-HAJJ</motion.h1>
-        <p className="mt-6 text-2xl text-amber-500 font-bold uppercase tracking-widest">The Pillars of Your Pilgrimage</p>
-      </section>
-
-      {/* Ritual Timeline */}
-      <section className="py-32 px-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-        {arkan.map((step, i) => (
-          <motion.div 
-            key={i} 
-            initial={{ opacity: 0, y: 30 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            transition={{ delay: i * 0.1 }}
-            className="p-10 rounded-[60px] bg-slate-50 border border-slate-100 hover:bg-amber-600 hover:text-white transition-all duration-500 text-center"
+            <section className="pt-56 pb-24 px-10 text-center relative overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2070')] bg-cover bg-center" />
+        
+        <div className="relative z-10">
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }} 
+            animate={{ y: 0, opacity: 1 }} 
+            className="text-6xl md:text-9xl font-black tracking-tighter uppercase text-white"
           >
-            <span className="text-xs font-black uppercase tracking-[3px] opacity-50">{step.date}</span>
-            <h3 className="text-3xl font-black mt-4 mb-6 uppercase leading-tight">{step.title}</h3>
-            <p className="text-sm font-medium opacity-80">{step.desc}</p>
-          </motion.div>
-        ))}
+            ARKAN-E-<span style={{ color: redColor }}>HAJJ</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 0.3 }}
+            className="mt-6 text-xl md:text-2xl font-black uppercase tracking-[5px]"
+            style={{ color: blueColor }}
+          >
+            The Pillars of Your Pilgrimage
+          </motion.p>
+        </div>
       </section>
+      <section className="py-32 px-6 md:px-10 max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {arkan.map((step, i) => (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 30 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+              className="p-10 rounded-[50px] bg-slate-50 border border-slate-100 transition-all duration-500 text-center shadow-sm hover:shadow-2xl group"
+            >
+              <span className="text-[10px] font-black uppercase tracking-[3px] opacity-30 group-hover:opacity-100 transition-opacity">
+                {step.date}
+              </span>
+              <h3 className="text-3xl font-black mt-4 mb-6 uppercase leading-tight group-hover:text-[#3b5998] transition-colors">
+                {step.title}
+              </h3>
+              <div className="w-10 h-1 mx-auto mb-6 rounded-full" style={{ backgroundColor: redColor }} />
+              <p className="text-sm font-medium text-slate-500 leading-relaxed group-hover:text-slate-800 transition-colors">
+                {step.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      <section className="py-32 bg-slate-900 text-white relative overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-96 h-96 blur-[120px] opacity-10 rounded-full" style={{ backgroundColor: blueColor }} />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 blur-[120px] opacity-10 rounded-full" style={{ backgroundColor: redColor }} />
 
-      {/* Prohibitions (Ma'zoorat al-Ihram) */}
-      <section className="py-32 bg-slate-900 text-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-6xl font-black tracking-tighter uppercase mb-20">Prohibitions of <span className="text-amber-500">Ihram</span></h2>
+        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-20">
+              Prohibitions of <span style={{ color: redColor }}>Ihram</span>
+            </h2>
+          </motion.div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
-              { icon: <Scissors />, label: "No Hair Cutting" },
-              { icon: <Shirt />, label: "No Stitched Clothes (Men)" },
-              { icon: <GiRazor />, label: "No Shaving" },
-              { icon: <Trees />, label: "No Killing Plants/Animals" }
+              { icon: <Scissors size={32} />, label: "No Hair Cutting" },
+              { icon: <Shirt size={32} />, label: "No Stitched Clothes" },
+              { icon: <GiRazor size={32} />, label: "No Shaving" },
+              { icon: <Trees size={32} />, label: "No Killing Plants" }
             ].map((item, i) => (
-              <div key={i} className="space-y-4">
-                <div className="w-24 h-24 bg-white/10 rounded-full mx-auto flex items-center justify-center text-amber-500 border border-white/10">
+              <motion.div 
+                key={i} 
+                whileHover={{ scale: 1.1 }}
+                className="space-y-6"
+              >
+                <div 
+                  className="w-24 h-24 rounded-full mx-auto flex items-center justify-center border-2 shadow-2xl transition-transform" 
+                  style={{ color: redColor, borderColor: `${redColor}40`, backgroundColor: `${redColor}10` }}
+                >
                   {item.icon}
                 </div>
-                <p className="font-bold text-xs uppercase tracking-widest">{item.label}</p>
-              </div>
+                <p className="font-black text-[10px] uppercase tracking-[3px] opacity-70">
+                  {item.label}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>
+      </section>
+      <section className="py-24 text-center">
+         <h3 className="text-4xl font-black uppercase tracking-tight mb-8" style={{ color: blueColor }}>
+           Ready for Hajj <span style={{ color: redColor }}>2027?</span>
+         </h3>
+         <button className="px-12 py-5 rounded-2xl text-white font-black tracking-widest text-xs hover:bg-[#3b5998] transition-all shadow-xl uppercase" style={{ backgroundColor: redColor }}>
+            Register Your Interest
+         </button>
       </section>
 
       <Footer />
