@@ -17,7 +17,7 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden lg:flex items-center gap-10 font-black text-[11px] tracking-[3px] text-slate-900">
-          {['HOME', 'ABOUT', 'PACKAGES', 'HAJJ', 'UMRAH', 'BLOGS', 'B2B PORTAL'].map((item) => (
+          {['HOME', 'ABOUT', 'PACKAGES', 'HAJJ', 'UMRAH', 'BLOGS', 'B2BFORM'].map((item) => (
             <Link 
               key={item} 
               href={`/${item === 'HOME' ? '' : item.toLowerCase().replace(' ', '-')}`} 
