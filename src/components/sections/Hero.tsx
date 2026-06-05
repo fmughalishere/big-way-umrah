@@ -40,8 +40,8 @@ export default function Hero() {
           variants={itemVars}
           className="text-6xl md:text-[130px] font-black text-slate-900 leading-[0.8] tracking-tighter mb-8"
         >
-          BIGWAY <br />
-          <span className="text-amber-600">TRAVELS.</span>
+          BIG WAY <br />
+          <span className="text-amber-600">UMRAH.</span>
         </motion.h1>
 
         <motion.p
