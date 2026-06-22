@@ -5,13 +5,17 @@ import { Hotel, Plane, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import img1 from "../../../public/images/packages/img1.jpg";
-import img2 from "../../../public/images/packages/img2.jpg";
-import img3 from "../../../public/images/packages/img3.jpg";
-import img4 from "../../../public/images/packages/img4.jpg";
-import img5 from "../../../public/images/packages/img5.jpg";
+import img1 from "../../../public/images/packages/p1.jpg";
+import img2 from "../../../public/images/packages/p2.jpg";
+import img3 from "../../../public/images/packages/p3.jpg";
+import img4 from "../../../public/images/packages/p4.jpg";
+import img5 from "../../../public/images/packages/p5.jpg";
+import img6 from "../../../public/images/packages/p6.jpg";
+import img7 from "../../../public/images/packages/p7.jpg";
+import img8 from "../../../public/images/packages/p8.jpg";
+import img9 from "../../../public/images/packages/p9.jpg";
 
-const packageImages = [img1, img2, img3, img4, img5];
+const packageImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const blueColor = "#3b5998";
 const redColor = "#c1272d";

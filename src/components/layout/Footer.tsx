@@ -63,6 +63,8 @@ export default function Footer() {
               <span className="hover:text-[#c1272d] cursor-pointer transition">info@bigwayumrah.com</span>
             </div>
           </div>
+
+          {/* Pakistan Address */}
           <div className="space-y-5">
             <h4 className="text-xl font-black border-b-2 pb-2 uppercase tracking-tighter" style={{ color: blueColor, borderColor: `${redColor}20` }}>
               Pakistan Address
@@ -74,6 +76,8 @@ export default function Footer() {
               <Phone size={18} /> +92 317 317 6483
             </div>
           </div>
+
+          {/* UAE Address */}
           <div className="space-y-5">
             <h4 className="text-xl font-black border-b-2 pb-2 uppercase tracking-tighter" style={{ color: blueColor, borderColor: `${redColor}20` }}>
               UAE Address
@@ -85,19 +89,24 @@ export default function Footer() {
               <Phone size={18} /> +971 54 583 4874
             </div>
           </div>
+
+          {/* Saudi Address — UPDATED */}
           <div className="space-y-5">
             <h4 className="text-xl font-black border-b-2 pb-2 uppercase tracking-tighter" style={{ color: blueColor, borderColor: `${redColor}20` }}>
-              Saudi Address
+              Saudi Arabia Address
             </h4>
             <p className="text-sm text-slate-500 leading-relaxed font-medium">
-              1st floor, 17 number Flat, Building # 3319 Muhammad ibn Abd al Aziz Madi road, Riyadh
+              Building # 3322, Street Amrou Ibn Saifi, Secondary # 8112,
+              Al Sulary District, Riyadh — Postal Code: 14265
+              <br />
+              <span className="text-xs text-slate-400">Short Address: RQYA3322</span>
             </p>
             <div className="flex items-center gap-2 font-black text-lg" style={{ color: redColor }}>
               <Phone size={18} /> +966 56 311 4674
             </div>
           </div>
-
         </div>
+
         <div className="mt-20 pt-8 border-t border-slate-100 text-center">
           <p className="text-[10px] font-bold text-slate-400 tracking-[2px] uppercase">
             © {new Date().getFullYear()} Big Way Umrah & Travels. All Rights Reserved.

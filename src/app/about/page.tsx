@@ -25,7 +25,6 @@ export default function AboutPage() {
                                 src="/images/about.jpg"
                                 alt="About Big Way Travel"
                                 fill
-                                quality={100}
                                 className="object-cover object-center transition-all duration-1000 scale-105 group-hover:scale-100"
                                 priority
                             />
